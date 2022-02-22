@@ -135,8 +135,9 @@ def tweets_to_df(
 
         data["Followers"].append(followers_count)
 
-        df = DataFrame(data)
-        return df, tweets_returned, tweets_omitted
+    # Construct DataFrame with dict Data
+    df = DataFrame(data)
+    return df, tweets_returned, tweets_omitted
 
 
 class TextF:

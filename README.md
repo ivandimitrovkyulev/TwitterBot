@@ -8,7 +8,7 @@ Various filters are applied to find the desired tweets.
 ## Installation
 <br/>
 
-This project uses **Python 3.8.8**
+This project uses **Python 3.9.6**
 
 Clone the project:
 ```

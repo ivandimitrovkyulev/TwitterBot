@@ -32,7 +32,7 @@ parser.add_argument(
     help="Number of queries to request from Twitter. Limits may apply.",
 )
 parser.add_argument(
-    "-f", action="store", type=str, dest="filename", nargs='?', metavar="filename", default="tweets",
+    "-f", action="store", type=str, dest="filename", nargs='?', metavar="filename", default="tweets.csv",
     help="Name of the file to save the results in. search_tweets.csv for example.",
 )
 parser.add_argument(
@@ -84,6 +84,7 @@ regex = args.regex
 mode = args.mode
 sort_results = args.sort_results
 
+# Create pagination for querying tweets
 tweets = Cursor(getattr(api, search_type), q=query).items(number)
 
 # Construct the API query with the given parameters and return results
@@ -103,7 +104,7 @@ else:
     tweets_omitted = tweet_info[2]
 
 if args.sort_results:
-    df.sort_values(by=sort_results, ascending=False)
+    df.sort_values(by=f"{sort_results}", inplace=True, ascending=False)
 
 # Save DataFrame to .csv file
 df.to_csv(filename, float_format="{:,.2f}".format, mode=mode)
