@@ -1,4 +1,4 @@
-# Twitter Bot v1.0.0
+# Twitter Bot v1.0.1
 This script queries Twitter for tweets using their API.
 The results are saved in a .csv file in a formatted way.
 Various filters are applied to find the desired tweets.
